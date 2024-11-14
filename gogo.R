@@ -4,7 +4,7 @@ library(ggplot2)
 library(tidyr)
 
 # Load the CSV data (replace the file path with the correct one on your system)
-df <- read.csv("/home/ubuntu-linux/Documents/gogo.csv")
+df <- read.csv("/path/to/yourfile.csv")
 
 # --- Step 1: Genre Frequency Analysis ---
 
