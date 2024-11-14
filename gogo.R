@@ -3,21 +3,14 @@ library(dplyr)
 library(ggplot2)
 library(tidyr)
 
-# Sample data frame (replace with actual data loading)
-# df <- read.csv("your_anime_data.csv") # Uncomment this line to load your data
-
-# Example dataset (assuming 'genre' and 'released' columns exist in df)
-# Replace this with your actual data loading process
-df <- data.frame(
-  genre = c("Action, Adventure", "Comedy, Fantasy", "Action, Sci-Fi", "Drama, Adventure", "Comedy"),
-  released = c(1995, 2001, 1995, 2005, 2010)
-)
+# Load the CSV data (replace the file path with the correct one on your system)
+df <- read.csv("/home/ubuntu-linux/Documents/gogo.csv")
 
 # --- Step 1: Genre Frequency Analysis ---
 
 # Split genres and count occurrences
 genre_df <- df %>%
-  separate_rows(genre, sep = ", ") %>% # Split genre column
+  separate_rows(genre, sep = ", ") %>% # Split genre column by commas
   group_by(genre) %>%
   summarize(count = n()) %>%
   arrange(desc(count))
@@ -50,4 +43,3 @@ ggplot(release_counts, aes(x = released, y = count)) +
        x = "Year",
        y = "Number of Releases") +
   theme_minimal()
-
