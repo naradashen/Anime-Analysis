@@ -4,7 +4,7 @@ library(tidyr)
 library(plotly)
 
 # Load your actual CSV data (replace the path with the correct one)
-df <- read.csv("/home/ubuntu-linux/Documents/gogo.csv")
+df <- read.csv("/path/tp/yourfile.csv")
 
 # --- Debugging: Check if the data is loaded correctly
 print(df)
